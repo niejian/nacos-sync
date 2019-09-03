@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: zk-nacos-sync
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://yun2:3306/nacos_sync?characterEncoding=utf8
+    password: code4fun1234
+    hikari:
+      maximum-pool-size: 200
+      minimum-idle: 10
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+zookeeper:
+  address: 192.168.242.15:2182,192.168.242.15:2181,192.168.242.15:2183
+sync:
+  # nacos-sync界面创建的目标集群、源集群的id
+  dest-cluster-id: f25df9683702cbc8fb629eb4eb74860a
+  source-cluster-id: c0d4be04dc32daab3775a51e36c1f562
+server:
+  port: 8081
